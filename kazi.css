@@ -304,41 +304,78 @@
         
         /* Excerpt Section */
         .excerpt {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-        }
-        
-        .excerpt-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
+            background: linear-gradient(rgba(45, 45, 45, 0.85), rgba(45, 45, 45, 0.85)), 
+                url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') 
+                no-repeat center center / cover;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+    }
+    
+    .excerpt-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .excerpt-quotes {
+        background: rgba(230, 228, 226, 0.027);
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 40px;
+        border: 1px solid rgba(225, 156, 77, 0.3);
+    }
+    
+    .quote-block {
+        position: relative;
+    }
+    
+    .quote-block:first-child:before,
+    .quote-block:last-child:after {
+        content: '"';
+        font-size: 4rem;
+        color: #E19C4D;
+        opacity: 0.3;
+        position: absolute;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .quote-block:first-child:before {
+        top: -20px;
+        left: -20px;
+    }
+    
+    .quote-block:last-child:after {
+        bottom: -40px;
+        right: -20px;
+    }
+    
+    .excerpt-text {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        color: #F5F0E6;
+        margin-bottom: 10px;
+        font-style: italic;
+        letter-spacing: 0.5px;
+    }
+    
+    .excerpt-actions {
+        margin-top: 50px;
+    }
+    
+    @media (max-width: 768px) {
         .excerpt-text {
-            font-size: 1.3rem;
-            font-style: italic;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            position: relative;
+            font-size: 1.1rem;
         }
         
-        .excerpt-text:before, .excerpt-text:after {
-            content: '"';
+        .excerpt-quotes {
+            padding: 30px 20px;
+        }
+        
+        .quote-block:first-child:before,
+        .quote-block:last-child:after {
             font-size: 3rem;
-            color: var(--primary);
-            opacity: 0.5;
-            position: absolute;
         }
-        
-        .excerpt-text:before {
-            top: -20px;
-            left: -30px;
-        }
-        
-        .excerpt-text:after {
-            bottom: -40px;
-            right: -30px;
-        }
+    }
         
         /* Author Section */
         .author {
